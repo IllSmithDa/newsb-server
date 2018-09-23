@@ -8,8 +8,12 @@ const server = express();
 server.use(bodyParser.json());
 
 const corsOption = {
-  origin: '*',
+  origin: requrl.reqURL,
+  credentials: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  preflightContinue: false
 };
+
 server.use(cors(corsOption));
 server.listen(port, () => {
   console.log(`server listening on port ${port}`);
