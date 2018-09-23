@@ -1,0 +1,29 @@
+{
+  "name": "newsb-server",
+  "version": "1.0.0",
+  "description": "test server for a app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "test",
+    "server"
+  ],
+  "author": "Samuel Kim",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "google-news-rss": "^0.4.1",
+    "google-trends-api": "^4.7.0",
+    "googlenews-rss-scraper": "^1.0.2",
+    "my-google-news": "^3.0.0",
+    "node-google-search-trends": "^1.1.0",
+    "nodemon": "^1.18.3",
+    "session": "^0.1.0",
+    "url-metadata": "^2.1.7"
+  }
+}
