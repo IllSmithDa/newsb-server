@@ -10,7 +10,7 @@ server.use(bodyParser.json());
 
 const corsOption = {
   origin: requrl.reqURL,
-  credentials: false,
+  credentials: true,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   preflightContinue: false
 };
