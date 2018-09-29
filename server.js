@@ -8,12 +8,7 @@ const requrl = require('./reqURL');
 
 server.use(bodyParser.json());
 
-const corsOption = {
-  origin: requrl.reqURL,
-  credentials: true,
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  preflightContinue: false
-};
+server.options('*', cors());
 
 server.use((req, res, next) => {
   console.log(req.headers)
@@ -24,6 +19,14 @@ server.use((req, res, next) => {
   );
   next();
 });
+
+const corsOption = {
+  origin: requrl.reqURL,
+  credentials: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  preflightContinue: false
+};
+
 
 console.log(requrl.reqURL)
 
