@@ -15,6 +15,18 @@ const corsOption = {
   preflightContinue: false
 };
 
+server.use((req, res, next) => {
+  console.log(req.headers)
+  res.setHeader("Access-Control-Allow-Origin", requrl.reqURL );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
+console.log(requrl.reqURL)
+
 server.use(cors(corsOption));
 server.listen(port, () => {
   console.log(`server listening on port ${port}`);
