@@ -11,6 +11,7 @@ server.use(bodyParser.json());
 server.options('/findGoogleTrends', cors());
 
 server.use((req, res, next) => {
+  console.log('reached');
   console.log(req.headers)
   res.setHeader("Access-Control-Allow-Origin", requrl.reqURL );
   res.setHeader(
