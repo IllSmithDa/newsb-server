@@ -8,7 +8,7 @@ const requrl = require('./reqURL');
 
 server.use(bodyParser.json());
 
-server.options('*', cors());
+server.options(requrl.reqURL, cors());
 
 server.use((req, res, next) => {
   console.log(req.headers)
