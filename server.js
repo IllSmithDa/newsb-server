@@ -9,7 +9,7 @@ const requrl = require('./reqURL');
 server.use(bodyParser.json());
 
 server.options('/findGoogleTrends', cors());
-
+/*
 server.use((req, res, next) => {
   console.log('reached');
   console.log(req.headers)
@@ -20,7 +20,7 @@ server.use((req, res, next) => {
   );
   next();
 });
-
+*/
 const corsOption = {
   origin: requrl.reqURL,
   credentials: true,
@@ -32,7 +32,9 @@ const corsOption = {
 console.log(requrl.reqURL)
 
 server.use(cors(corsOption));
-server.listen(port, () => {
+//https://stackoverflow.com/questions/15693192/heroku-node-js-error-web-process-failed-to-bind-to-port-within-60-seconds-of
+// add process.env.PORT to avoid this issue
+server.listen(process.env.PORT || port, () => {
   console.log(`server listening on port ${port}`);
 })
 
