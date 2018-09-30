@@ -8,7 +8,7 @@ const requrl = require('./reqURL');
 
 server.use(bodyParser.json());
 
-server.options(requrl.reqURL, cors());
+server.options('/findGoogleTrends', cors());
 
 server.use((req, res, next) => {
   console.log(req.headers)
